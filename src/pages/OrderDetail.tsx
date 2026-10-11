@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { getOrderStatusBadgeClass } from "@/lib/orderStatus";
 
 type OrderRow = {
   id: string;
@@ -38,16 +39,6 @@ type OrderItemRow = {
   color: string;
   quantity: number;
   price: number;
-};
-
-const statusColors: Record<string, string> = {
-  pending: "bg-yellow-100 text-yellow-800",
-  confirmed: "bg-blue-100 text-blue-800",
-  processing: "bg-purple-100 text-purple-800",
-  shipped: "bg-indigo-100 text-indigo-800",
-  delivered: "bg-green-100 text-green-800",
-  cancelled: "bg-red-100 text-red-800",
-  refunded: "bg-gray-100 text-gray-800",
 };
 
 function formatINR(value: number) {
@@ -210,7 +201,7 @@ export default function OrderDetail() {
             <h1 className="font-display text-3xl md:text-4xl">{order.order_number}</h1>
             <Badge
               variant="secondary"
-              className={statusColors[String(order.status)] || "bg-secondary"}
+              className={getOrderStatusBadgeClass(String(order.status))}
             >
               {String(order.status).charAt(0).toUpperCase() + String(order.status).slice(1)}
             </Badge>

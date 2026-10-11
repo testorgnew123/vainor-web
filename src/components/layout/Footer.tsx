@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Twitter, Linkedin, Globe } from 'lucide-react';
+import { Logo } from '@/components/layout/Logo';
 
 const footerLinks = {
   shop: [
@@ -106,11 +107,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <Link to="/" className="flex items-center">
-            <img
-              src="/logo.png"
-              alt="NUUVELLE"
-              className="h-16 md:h-20 w-auto object-contain"
-            />
+            <Logo className="h-16 md:h-20" wordmarkClassName="text-2xl md:text-3xl" />
           </Link>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
             <Link to="/privacy" className="hover:text-foreground transition-colors">

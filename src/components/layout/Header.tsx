@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
+import { Logo } from '@/components/layout/Logo';
 
 const navLinks = [
   { name: 'Jeans', href: '/shop?subcategory=Jeans' },
@@ -104,11 +105,7 @@ export function Header() {
               to="/"
               className="flex items-center"
             >
-              <img
-                src="/logo.png"
-                alt="NUUVELLE"
-                className="h-12 md:h-16 w-auto object-contain"
-              />
+              <Logo className="h-12 md:h-16" wordmarkClassName="text-xl md:text-2xl" />
             </Link>
 
             {/* Desktop Navigation */}

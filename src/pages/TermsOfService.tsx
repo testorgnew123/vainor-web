@@ -79,7 +79,7 @@ export default function TermsOfService() {
             <section>
               <h2 className="font-display text-2xl mb-4">7. Limitation of Liability</h2>
               <p className="text-muted-foreground leading-relaxed">
-                In no event shall Nuuvelle or its suppliers be liable for any damages arising out of 
+                In no event shall Vainor or its suppliers be liable for any damages arising out of
                 the use or inability to use the materials on our website, even if we have been notified 
                 of the possibility of such damage.
               </p>
@@ -107,8 +107,8 @@ export default function TermsOfService() {
               <h2 className="font-display text-2xl mb-4">10. Contact Information</h2>
               <p className="text-muted-foreground leading-relaxed">
                 If you have any questions about these Terms of Service, please contact us at{' '}
-                <a href="mailto:legal@nuuvelle.com" className="text-foreground hover:underline">
-                  legal@nuuvelle.com
+                <a href="mailto:legal@vainor.com" className="text-foreground hover:underline">
+                  legal@vainor.com
                 </a>
               </p>
             </section>

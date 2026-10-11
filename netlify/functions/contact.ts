@@ -2,11 +2,11 @@ import type { Handler } from '@netlify/functions';
 import * as nodemailer from 'nodemailer';
 
 const SMTP_PORT = parseInt(process.env.SMTP_PORT || '465');
-const SMTP_USER = (process.env.SMTP_USER || 'order@nuuvelle.com').trim();
-const SMTP_HOST = (process.env.SMTP_HOST || 'mail.nuuvelle.com').trim();
+const SMTP_USER = (process.env.SMTP_USER || 'order@vainor.com').trim();
+const SMTP_HOST = (process.env.SMTP_HOST || 'mail.vainor.com').trim();
 const SMTP_PASS = (process.env.SMTP_PASSWORD || process.env.SMTP_PASS || '').trim().replace(/^["']|["']$/g, '');
 const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || SMTP_USER).trim();
-const FROM_ADDRESS = `"NUUVELLE" <${SMTP_USER}>`;
+const FROM_ADDRESS = `"VAINOR" <${SMTP_USER}>`;
 
 const transporter = nodemailer.createTransport({
   host: SMTP_HOST,
@@ -60,10 +60,10 @@ export const handler: Handler = async (event) => {
       <!DOCTYPE html>
       <html>
       <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-      <body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+      <body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #F3F0EB;">
         <div style="max-width: 600px; margin: 0 auto; background: #ffffff;">
-          <div style="background-color: #000000; padding: 24px; text-align: center;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 4px;">NUUVELLE</h1>
+          <div style="background-color: #181A20; padding: 24px; text-align: center;">
+            <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 4px;">VAINOR</h1>
           </div>
           <div style="padding: 32px 24px;">
             <h2 style="margin: 0 0 8px; font-size: 20px; color: #333;">New Enquiry Received</h2>
@@ -71,7 +71,7 @@ export const handler: Handler = async (event) => {
               Received on ${timestamp}
             </p>
             
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 24px;">
+            <div style="background: #F8F5F0; padding: 20px; border-radius: 8px; margin-bottom: 24px;">
               <table style="width: 100%; border-collapse: collapse;">
                 <tr>
                   <td style="padding: 8px 0; color: #666; font-size: 14px; width: 120px;">Name:</td>
@@ -80,7 +80,7 @@ export const handler: Handler = async (event) => {
                 <tr>
                   <td style="padding: 8px 0; color: #666; font-size: 14px;">Mobile Number:</td>
                   <td style="padding: 8px 0; color: #333; font-size: 14px; font-weight: 500;">
-                    <a href="tel:${data.phone.trim()}" style="color: #000; text-decoration: none;">${data.phone.trim()}</a>
+                    <a href="tel:${data.phone.trim()}" style="color: #181A20; text-decoration: none;">${data.phone.trim()}</a>
                   </td>
                 </tr>
                 ${data.remark && data.remark.trim() ? `
@@ -92,7 +92,7 @@ export const handler: Handler = async (event) => {
               </table>
             </div>
           </div>
-          <div style="background: #f9f9f9; padding: 16px 24px; text-align: center;">
+          <div style="background: #F8F5F0; padding: 16px 24px; text-align: center;">
             <p style="margin: 0; color: #666; font-size: 12px;">
               This is an automated notification from your website contact form.
             </p>
@@ -108,7 +108,7 @@ export const handler: Handler = async (event) => {
     await transporter.sendMail({
       from: FROM_ADDRESS,
       to: ADMIN_EMAIL,
-      subject: `New Enquiry from ${data.name.trim()} - NUUVELLE`,
+      subject: `New Enquiry from ${data.name.trim()} - VAINOR`,
       html,
     });
 

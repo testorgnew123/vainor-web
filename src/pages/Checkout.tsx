@@ -346,7 +346,7 @@ export default function Checkout() {
       await initiatePayment({
         amount: total,
         currency: 'INR',
-        name: 'Nuuvelle',
+        name: 'Vainor',
         description: `Order of ${items.length} item(s)`,
         prefill: {
           name: formData.fullName,
@@ -507,9 +507,9 @@ export default function Checkout() {
 
         {/* Free Shipping Banner */}
         {shippingCost > 0 && (
-          <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-center gap-3">
-            <Truck className="h-5 w-5 text-amber-600 flex-shrink-0" />
-            <p className="text-sm text-amber-800">
+          <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-lg flex items-center gap-3">
+            <Truck className="h-5 w-5 text-accent flex-shrink-0" />
+            <p className="text-sm text-foreground">
               Add ₹{(2500 - subtotal).toLocaleString('en-IN')} more to get <span className="font-semibold">FREE delivery!</span>
             </p>
           </div>
@@ -748,15 +748,15 @@ export default function Checkout() {
               {/* Coupon Code Input */}
               <div className="mb-4">
                 {appliedCoupon ? (
-                  <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg p-3">
+                  <div className="flex items-center justify-between bg-success/10 border border-success/30 rounded-lg p-3">
                     <div className="flex items-center gap-2">
-                      <Tag className="h-4 w-4 text-green-600" />
-                      <span className="text-sm font-medium text-green-800">{appliedCoupon.code}</span>
-                      <span className="text-xs text-green-600">
+                      <Tag className="h-4 w-4 text-success" />
+                      <span className="text-sm font-medium text-success">{appliedCoupon.code}</span>
+                      <span className="text-xs text-success">
                         (-₹{discount.toLocaleString('en-IN')})
                       </span>
                     </div>
-                    <button onClick={handleRemoveCoupon} className="text-green-600 hover:text-green-800">
+                    <button onClick={handleRemoveCoupon} className="text-success hover:text-success/80">
                       <X className="h-4 w-4" />
                     </button>
                   </div>
@@ -801,7 +801,7 @@ export default function Checkout() {
                   </span>
                 </div>
                 {discount > 0 && (
-                  <div className="flex justify-between text-green-600">
+                  <div className="flex justify-between text-success">
                     <span>Discount</span>
                     <span>-₹{discount.toLocaleString('en-IN')}</span>
                   </div>

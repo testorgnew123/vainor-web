@@ -2,8 +2,8 @@ import { Handler } from '@netlify/functions';
 import * as nodemailer from 'nodemailer';
 
 const SMTP_PORT = parseInt(process.env.SMTP_PORT || '465');
-const SMTP_USER = (process.env.SMTP_USER || 'order@nuuvelle.com').trim();
-const SMTP_HOST = (process.env.SMTP_HOST || 'mail.nuuvelle.com').trim();
+const SMTP_USER = (process.env.SMTP_USER || 'order@vainor.com').trim();
+const SMTP_HOST = (process.env.SMTP_HOST || 'mail.vainor.com').trim();
 const SMTP_PASS = (process.env.SMTP_PASSWORD || process.env.SMTP_PASS || '').trim().replace(/^["']|["']$/g, '');
 const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || SMTP_USER).trim();
 
@@ -62,17 +62,17 @@ export const handler: Handler = async (event) => {
 
     // Send test email
     const info = await transporter.sendMail({
-      from: `"NUUVELLE Test" <${SMTP_USER}>`,
+      from: `"VAINOR Test" <${SMTP_USER}>`,
       to: to,
       bcc: ADMIN_EMAIL,
-      subject: 'Test Email from NUUVELLE',
+      subject: 'Test Email from VAINOR',
       html: `
         <!DOCTYPE html>
         <html>
         <head><meta charset="utf-8"></head>
         <body style="font-family: Arial, sans-serif; padding: 20px;">
-          <h2 style="color: #000;">Email Test Successful!</h2>
-          <p>This is a test email from your NUUVELLE e-commerce system.</p>
+          <h2 style="color: #181A20;">Email Test Successful!</h2>
+          <p>This is a test email from your VAINOR e-commerce system.</p>
           <p>If you're seeing this, your email configuration is working correctly.</p>
           <hr>
           <p style="font-size: 12px; color: #666;">

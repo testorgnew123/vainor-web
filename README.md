@@ -1,4 +1,4 @@
-# NUUVELLE - Men's Fashion E-Commerce
+# VAINOR - Men's Fashion E-Commerce
 
 ## Project Info
 

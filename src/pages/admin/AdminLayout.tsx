@@ -17,6 +17,7 @@ import { useState, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { useAdminStore } from '@/stores/adminStore';
 import { cn } from '@/lib/utils';
+import { Logo } from '@/components/layout/Logo';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -60,11 +61,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           <Menu className="h-5 w-5" />
         </button>
         <div className="flex items-center gap-2">
-          <img
-            src="/logo.png"
-            alt="NUUVELLE"
-            className="h-8 w-auto object-contain"
-          />
+          <Logo variant="icon" className="h-8 w-8" />
           <span className="font-display text-sm">Admin</span>
         </div>
         <div className="w-10" />
@@ -90,11 +87,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           {/* Logo */}
           <div className="h-16 flex items-center justify-between px-4 border-b border-border">
             <Link to="/admin" className="flex items-center gap-2">
-              <img
-                src="/logo.png"
-                alt="NUUVELLE"
-                className="h-12 w-auto object-contain"
-              />
+              <Logo variant="icon" className="h-12 w-12" />
               <span className="font-display text-lg">Admin</span>
             </Link>
             <button

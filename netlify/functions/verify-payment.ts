@@ -38,7 +38,7 @@ export const handler: Handler = async (event) => {
     }
 
     // Generate order number
-    const orderNumber = `NVL-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+    const orderNumber = `VNR-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
 
     // Extract customer email from shipping address for guest order linking
     const customerEmail = order_data.shipping_address?.email || null;

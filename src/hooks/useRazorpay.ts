@@ -134,7 +134,7 @@ export function useRazorpay() {
         key: orderData.key_id,
         amount: orderData.amount,
         currency: orderData.currency,
-        name: params.name || 'Nuuvelle',
+        name: params.name || 'Vainor',
         description: params.description || 'Purchase',
         order_id: orderData.order_id,
         handler: async (response) => {
@@ -147,7 +147,7 @@ export function useRazorpay() {
         prefill: params.prefill,
         notes: params.notes,
         theme: {
-          color: '#000000',
+          color: '#181A20',
         },
         modal: {
           ondismiss: () => {

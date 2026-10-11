@@ -173,9 +173,9 @@ export default function AdminInventory() {
     if (quantity === 0) {
       return <Badge variant="destructive">Out of Stock</Badge>;
     } else if (quantity <= 10) {
-      return <Badge variant="outline" className="text-yellow-600 border-yellow-600">Low Stock</Badge>;
+      return <Badge variant="outline" className="text-accent-warm border-accent-warm">Low Stock</Badge>;
     }
-    return <Badge variant="outline" className="text-green-600 border-green-600">In Stock</Badge>;
+    return <Badge variant="outline" className="text-success border-success">In Stock</Badge>;
   };
 
   if (isLoading) {
@@ -192,9 +192,9 @@ export default function AdminInventory() {
 
       {/* Low Stock Alert */}
       {lowStock.length > 0 && (
-        <Card className="border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20">
+        <Card className="border-accent/40 bg-accent/10">
           <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-yellow-700 dark:text-yellow-400">
+            <CardTitle className="flex items-center gap-2 text-accent-warm">
               <AlertTriangle className="h-5 w-5" />
               Low Stock Alert ({lowStock.length} items)
             </CardTitle>
@@ -205,7 +205,7 @@ export default function AdminInventory() {
                 <button
                   key={product.id}
                   onClick={() => openUpdateDialog(product)}
-                  className="flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-background rounded-full border hover:border-foreground transition-colors"
+                  className="flex items-center gap-2 px-3 py-1.5 bg-background rounded-full border hover:border-foreground transition-colors"
                 >
                   <div className="flex flex-col items-start">
                     <span className="text-sm font-medium">{product.name}</span>
@@ -213,7 +213,7 @@ export default function AdminInventory() {
                       <span className="text-xs font-mono text-muted-foreground">{product.sku}</span>
                     )}
                   </div>
-                  <span className="text-sm text-red-600 font-bold">{product.stock_quantity}</span>
+                  <span className="text-sm text-destructive font-bold">{product.stock_quantity}</span>
                 </button>
               ))}
               {lowStock.length > 5 && (
@@ -231,8 +231,8 @@ export default function AdminInventory() {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                <Package className="h-6 w-6 text-blue-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <Package className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <p className="text-2xl font-bold">{products.length}</p>
@@ -244,8 +244,8 @@ export default function AdminInventory() {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                <Package className="h-6 w-6 text-green-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <Package className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <p className="text-2xl font-bold">
@@ -259,8 +259,8 @@ export default function AdminInventory() {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
-                <AlertTriangle className="h-6 w-6 text-yellow-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <AlertTriangle className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <p className="text-2xl font-bold">{lowStock.length}</p>
@@ -272,8 +272,8 @@ export default function AdminInventory() {
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-4">
-              <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-lg">
-                <Package className="h-6 w-6 text-red-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <Package className="h-6 w-6 text-foreground" />
               </div>
               <div>
                 <p className="text-2xl font-bold">
@@ -386,7 +386,7 @@ export default function AdminInventory() {
                     <p className="font-mono">
                       <span className="text-muted-foreground">{log.previous_quantity}</span>
                       {' → '}
-                      <span className={log.new_quantity > log.previous_quantity ? 'text-green-600' : 'text-red-600'}>
+                      <span className={log.new_quantity > log.previous_quantity ? 'text-success' : 'text-destructive'}>
                         {log.new_quantity}
                       </span>
                     </p>

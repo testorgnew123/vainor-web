@@ -22,7 +22,7 @@ export async function handler(event: any) {
   }
 
   try {
-    const { folder = 'nuuvelle-products' } = JSON.parse(event.body || '{}');
+    const { folder = 'vainor-products' } = JSON.parse(event.body || '{}');
     const timestamp = Math.round(Date.now() / 1000);
 
     const paramsToSign = `folder=${folder}&timestamp=${timestamp}`;

@@ -79,8 +79,8 @@ export default function PrivacyPolicy() {
               <h2 className="font-display text-2xl mb-4">7. Contact Us</h2>
               <p className="text-muted-foreground leading-relaxed">
                 If you have any questions about this Privacy Policy, please contact us at{' '}
-                <a href="mailto:privacy@nuuvelle.com" className="text-foreground hover:underline">
-                  privacy@nuuvelle.com
+                <a href="mailto:privacy@vainor.com" className="text-foreground hover:underline">
+                  privacy@vainor.com
                 </a>
               </p>
             </section>

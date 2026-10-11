@@ -186,7 +186,7 @@ export default function ProductDetail() {
                   </span>
                 )}
                 {!isOutOfStock && isLowStock && (
-                  <span className="px-3 py-1 bg-yellow-500 text-yellow-50 text-xs font-medium rounded">
+                  <span className="px-3 py-1 bg-accent-warm text-accent-foreground text-xs font-medium rounded">
                     Only {product.stockQuantity} left
                   </span>
                 )}
@@ -277,15 +277,15 @@ export default function ProductDetail() {
                     <span className="text-sm font-medium">Out of Stock</span>
                   </div>
                 ) : isLowStock ? (
-                  <div className="flex items-center gap-2 text-yellow-600">
+                  <div className="flex items-center gap-2 text-accent-warm">
                     <span className="text-sm font-medium">Only {product.stockQuantity} left in stock</span>
                   </div>
                 ) : product.stockQuantity !== undefined ? (
-                  <div className="flex items-center gap-2 text-green-600">
+                  <div className="flex items-center gap-2 text-success">
                     <span className="text-sm font-medium">In Stock ({product.stockQuantity} available)</span>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-2 text-green-600">
+                  <div className="flex items-center gap-2 text-success">
                     <span className="text-sm font-medium">In Stock</span>
                   </div>
                 )}

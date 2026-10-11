@@ -22,6 +22,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { useAdminStore, adminApiCall } from '@/stores/adminStore';
 import { useToast } from '@/hooks/use-toast';
+import { getOrderStatusTextClass } from '@/lib/orderStatus';
 
 interface UserData {
   id: string;
@@ -132,19 +133,6 @@ export default function AdminUsers() {
     }
   };
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'pending': return 'text-yellow-600';
-      case 'confirmed': return 'text-blue-600';
-      case 'processing': return 'text-purple-600';
-      case 'shipped': return 'text-indigo-600';
-      case 'delivered': return 'text-green-600';
-      case 'cancelled': return 'text-red-600';
-      case 'refunded': return 'text-orange-600';
-      default: return 'text-muted-foreground';
-    }
-  };
-
   const filteredUsers = users.filter(user => {
     const search = searchQuery.toLowerCase();
     return (
@@ -184,15 +172,15 @@ export default function AdminUsers() {
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <UserCheck className="h-5 w-5 mx-auto mb-2 text-green-600" />
-            <p className="text-3xl font-bold text-green-600">{userStats.active}</p>
+            <UserCheck className="h-5 w-5 mx-auto mb-2 text-success" />
+            <p className="text-3xl font-bold text-success">{userStats.active}</p>
             <p className="text-sm text-muted-foreground">Active</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <UserX className="h-5 w-5 mx-auto mb-2 text-red-600" />
-            <p className="text-3xl font-bold text-red-600">{userStats.blocked}</p>
+            <UserX className="h-5 w-5 mx-auto mb-2 text-destructive" />
+            <p className="text-3xl font-bold text-destructive">{userStats.blocked}</p>
             <p className="text-sm text-muted-foreground">Blocked</p>
           </CardContent>
         </Card>
@@ -265,7 +253,7 @@ export default function AdminUsers() {
                       {user.is_blocked ? (
                         <Badge variant="destructive">Blocked</Badge>
                       ) : (
-                        <Badge variant="outline" className="text-green-600 border-green-600">Active</Badge>
+                        <Badge variant="outline" className="text-success border-success">Active</Badge>
                       )}
                     </TableCell>
                     <TableCell>
@@ -289,7 +277,7 @@ export default function AdminUsers() {
                           variant="ghost"
                           size="sm"
                           onClick={() => openBlockDialog(user)}
-                          className={user.is_blocked ? 'text-green-600 hover:text-green-700' : 'text-red-600 hover:text-red-700'}
+                          className={user.is_blocked ? 'text-success hover:text-success/80' : 'text-destructive hover:text-destructive/80'}
                         >
                           {user.is_blocked ? (
                             <>
@@ -382,7 +370,7 @@ export default function AdminUsers() {
                     </div>
                     <div className="text-right">
                       <p className="font-bold">₹{parseFloat(order.total).toLocaleString('en-IN')}</p>
-                      <Badge variant="outline" className={`${getStatusColor(order.status)} border-current`}>
+                      <Badge variant="outline" className={`${getOrderStatusTextClass(order.status)} border-current`}>
                         {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                       </Badge>
                     </div>

@@ -145,20 +145,20 @@ export default function AdminAnalytics() {
                 <div className="flex items-center mt-1 text-sm">
                   {getChange(stats.totalRevenue).isPositive ? (
                     <>
-                      <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
-                      <span className="text-green-600">+{getChange(stats.totalRevenue).value.toFixed(1)}%</span>
+                      <TrendingUp className="h-4 w-4 text-success mr-1" />
+                      <span className="text-success">+{getChange(stats.totalRevenue).value.toFixed(1)}%</span>
                     </>
                   ) : (
                     <>
-                      <TrendingDown className="h-4 w-4 text-red-600 mr-1" />
-                      <span className="text-red-600">{getChange(stats.totalRevenue).value.toFixed(1)}%</span>
+                      <TrendingDown className="h-4 w-4 text-destructive mr-1" />
+                      <span className="text-destructive">{getChange(stats.totalRevenue).value.toFixed(1)}%</span>
                     </>
                   )}
                   <span className="text-muted-foreground ml-1">vs previous</span>
                 </div>
               </div>
-              <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                <DollarSign className="h-6 w-6 text-green-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <DollarSign className="h-6 w-6 text-foreground" />
               </div>
             </div>
           </CardContent>
@@ -171,13 +171,13 @@ export default function AdminAnalytics() {
                 <p className="text-sm text-muted-foreground">Total Orders</p>
                 <p className="text-2xl font-bold">{stats.totalOrders}</p>
                 <div className="flex items-center mt-1 text-sm">
-                  <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
-                  <span className="text-green-600">+12.5%</span>
+                  <TrendingUp className="h-4 w-4 text-success mr-1" />
+                  <span className="text-success">+12.5%</span>
                   <span className="text-muted-foreground ml-1">vs previous</span>
                 </div>
               </div>
-              <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                <ShoppingBag className="h-6 w-6 text-blue-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <ShoppingBag className="h-6 w-6 text-foreground" />
               </div>
             </div>
           </CardContent>
@@ -190,13 +190,13 @@ export default function AdminAnalytics() {
                 <p className="text-sm text-muted-foreground">Avg. Order Value</p>
                 <p className="text-2xl font-bold">₹{stats.avgOrderValue.toLocaleString('en-IN', { maximumFractionDigits: 0 })}</p>
                 <div className="flex items-center mt-1 text-sm">
-                  <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
-                  <span className="text-green-600">+5.2%</span>
+                  <TrendingUp className="h-4 w-4 text-success mr-1" />
+                  <span className="text-success">+5.2%</span>
                   <span className="text-muted-foreground ml-1">vs previous</span>
                 </div>
               </div>
-              <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
-                <Users className="h-6 w-6 text-purple-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <Users className="h-6 w-6 text-foreground" />
               </div>
             </div>
           </CardContent>
@@ -209,13 +209,13 @@ export default function AdminAnalytics() {
                 <p className="text-sm text-muted-foreground">Product Views</p>
                 <p className="text-2xl font-bold">{stats.totalViews.toLocaleString()}</p>
                 <div className="flex items-center mt-1 text-sm">
-                  <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
-                  <span className="text-green-600">+18.3%</span>
+                  <TrendingUp className="h-4 w-4 text-success mr-1" />
+                  <span className="text-success">+18.3%</span>
                   <span className="text-muted-foreground ml-1">vs previous</span>
                 </div>
               </div>
-              <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-lg">
-                <Eye className="h-6 w-6 text-orange-600" />
+              <div className="p-3 bg-secondary rounded-lg">
+                <Eye className="h-6 w-6 text-foreground" />
               </div>
             </div>
           </CardContent>

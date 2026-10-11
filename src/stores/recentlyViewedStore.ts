@@ -33,7 +33,7 @@ export const useRecentlyViewedStore = create<RecentlyViewedStore>()(
       clear: () => set({ products: [] }),
     }),
     {
-      name: 'nuuvelle-recently-viewed',
+      name: 'vainor-recently-viewed',
     }
   )
 );

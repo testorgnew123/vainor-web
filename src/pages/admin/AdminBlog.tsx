@@ -166,19 +166,19 @@ export default function AdminBlog() {
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-green-600">{stats.published}</p>
+            <p className="text-3xl font-bold text-success">{stats.published}</p>
             <p className="text-sm text-muted-foreground">Published</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-yellow-600">{stats.draft}</p>
+            <p className="text-3xl font-bold text-accent-warm">{stats.draft}</p>
             <p className="text-sm text-muted-foreground">Drafts</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-blue-600">{stats.totalViews}</p>
+            <p className="text-3xl font-bold text-foreground">{stats.totalViews}</p>
             <p className="text-sm text-muted-foreground">Total Views</p>
           </CardContent>
         </Card>

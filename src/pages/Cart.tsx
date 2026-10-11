@@ -308,7 +308,7 @@ export default function Cart() {
                   )}
                 </div>
                 {appliedCoupon && (
-                  <div className="flex items-center gap-2 mt-2 text-xs text-green-600">
+                  <div className="flex items-center gap-2 mt-2 text-xs text-success">
                     <Tag className="h-3 w-3" />
                     <span>Coupon "{appliedCoupon.code}" applied</span>
                   </div>
@@ -322,7 +322,7 @@ export default function Cart() {
                   <span>₹{totalPrice.toLocaleString('en-IN')}</span>
                 </div>
                 {discount > 0 && (
-                  <div className="flex justify-between text-green-600">
+                  <div className="flex justify-between text-success">
                     <span>Discount ({appliedCoupon?.code})</span>
                     <span>-₹{discount.toLocaleString('en-IN')}</span>
                   </div>
@@ -331,7 +331,7 @@ export default function Cart() {
                   <span className="text-muted-foreground">Shipping</span>
                   <span>
                     {freeShipping ? (
-                      <span className="text-green-600">Free</span>
+                      <span className="text-success">Free</span>
                     ) : (
                       'Calculated at checkout'
                     )}

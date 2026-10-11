@@ -18,8 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["'Cormorant Garamond'", "serif"],
-        sans: ["'Inter'", "sans-serif"],
+        display: ["'Bodoni Moda'", "serif"],
+        sans: ["'Manrope'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

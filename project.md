@@ -1,10 +1,10 @@
-# NUUVELLE - Men's Fashion E-Commerce Store
+# VAINOR - Men's Fashion E-Commerce Store
 
 ## Project Overview
 
-**Nuuvelle** is a full-stack men's fashion e-commerce store targeting the Indian market (INR currency). It features a customer-facing storefront, user authentication, Razorpay payment integration, order management, a blog/journal section, and a complete admin portal for managing products, orders, inventory, blog posts, and analytics.
+**Vainor** is a full-stack men's fashion e-commerce store targeting the Indian market (INR currency). It features a customer-facing storefront, user authentication, Razorpay payment integration, order management, a blog/journal section, and a complete admin portal for managing products, orders, inventory, blog posts, and analytics.
 
-**Brand:** NUUVELLE (Men's Wear Only)
+**Brand:** VAINOR (Men's Wear Only)
 **Categories:** Jeans, Shirts, Trousers, Cargo, Lowers, T-Shirt
 
 ---
@@ -311,9 +311,9 @@
 | `RAZORPAY_KEY_ID`     | Razorpay public key               |
 | `RAZORPAY_KEY_SECRET` | Razorpay secret key               |
 | `JWT_SECRET`          | JWT signing secret for auth       |
-| `SMTP_HOST`           | SMTP server host (default: mail.nuuvelle.com) |
+| `SMTP_HOST`           | SMTP server host (default: mail.vainor.com) |
 | `SMTP_PORT`           | SMTP server port (default: 465)   |
-| `SMTP_USER`           | SMTP username (default: order@nuuvelle.com) |
+| `SMTP_USER`           | SMTP username (default: order@vainor.com) |
 | `SMTP_PASS`           | SMTP password                     |
 
 ---
@@ -326,7 +326,7 @@
 3. ~~**Profile Update**~~ - **IMPLEMENTED** — `netlify/functions/update-profile.ts` updates `users` + upserts `profiles` table; `src/pages/Profile.tsx` uses authenticated API call + `updateAuthUser()` to sync global state
 4. ~~**Coupon Application at Checkout**~~ - **IMPLEMENTED** — Checkout page has coupon input field, validates via `get-coupon` API (min order, usage limits), calculates percentage/fixed discounts, passes discount + coupon_code to `verify-payment`; coupon `used_count` incremented on purchase
 5. ~~**Stock Deduction on Purchase**~~ - **IMPLEMENTED** — `verify-payment.ts` deducts `stock_quantity` for UUID-based DB products after order creation, logs changes to `inventory_log` table; non-fatal (won't break payment on failure)
-6. ~~**Email Notifications**~~ - **IMPLEMENTED** — SMTP via HostGator (`mail.nuuvelle.com:465`); `sendOrderConfirmation` sent after payment verification; `sendShippingNotification` sent when admin marks order as shipped; uses `nodemailer` with branded HTML templates; non-fatal (email failures don't break payment/status flows)
+6. ~~**Email Notifications**~~ - **IMPLEMENTED** — SMTP via HostGator (`mail.vainor.com:465`); `sendOrderConfirmation` sent after payment verification; `sendShippingNotification` sent when admin marks order as shipped; uses `nodemailer` with branded HTML templates; non-fatal (email failures don't break payment/status flows)
 
 ### Medium Priority
 7. **Password Reset / Forgot Password** - No password recovery flow
@@ -359,7 +359,7 @@
 
 ## Security Concerns
 
-1. **Hardcoded JWT fallback secrets** in `auth-register.ts`, `auth-login.ts`, and `admin-login.ts` (`'your-secret-key-change-in-production'` / `'nuuvelle-admin-secret-key-change-in-production'`)
+1. **Hardcoded JWT fallback secrets** in `auth-register.ts`, `auth-login.ts`, and `admin-login.ts` (`'your-secret-key-change-in-production'` / `'vainor-admin-secret-key-change-in-production'`)
 2. **Admin login fallback** - `admin-login.ts` has a plaintext password fallback (`Admin@123`) that bypasses bcrypt verification
 3. **CORS wildcard** - All API endpoints use `Access-Control-Allow-Origin: *`
 4. **No rate limiting** on authentication endpoints (brute force vulnerable)

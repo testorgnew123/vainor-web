@@ -27,7 +27,7 @@ export default function Index() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1920&q=80"
-            alt="Nuuvelle Fashion"
+            alt="Vainor Fashion"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
@@ -188,7 +188,7 @@ export default function Index() {
           <div className="relative rounded-xl overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&q=80"
-              alt="Nuuvelle Sustainability"
+              alt="Vainor Sustainability"
               className="w-full h-[400px] md:h-[500px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/20" />

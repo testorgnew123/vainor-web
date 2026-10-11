@@ -13,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useAdminStore, adminApiCall } from '@/stores/adminStore';
+import { getOrderStatusBadgeClass } from '@/lib/orderStatus';
 
 interface DashboardStats {
   totalOrders: number;
@@ -23,15 +24,6 @@ interface DashboardStats {
   recentOrders: any[];
   revenueChart: { date: string; revenue: number }[];
 }
-
-const statusColors: Record<string, string> = {
-  pending: 'bg-yellow-100 text-yellow-800',
-  confirmed: 'bg-blue-100 text-blue-800',
-  processing: 'bg-purple-100 text-purple-800',
-  shipped: 'bg-indigo-100 text-indigo-800',
-  delivered: 'bg-green-100 text-green-800',
-  cancelled: 'bg-red-100 text-red-800',
-};
 
 export default function AdminDashboard() {
   const { token } = useAdminStore();
@@ -131,7 +123,7 @@ export default function AdminDashboard() {
             <CardTitle className="text-sm font-medium text-muted-foreground">
               Low Stock Alert
             </CardTitle>
-            <AlertTriangle className="h-4 w-4 text-yellow-500" />
+            <AlertTriangle className="h-4 w-4 text-accent-warm" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{stats.lowStockProducts}</div>
@@ -172,9 +164,9 @@ export default function AdminDashboard() {
                       <p className="font-medium text-sm">
                         ₹{parseFloat(order.total).toLocaleString('en-IN')}
                       </p>
-                      <Badge 
-                        variant="secondary" 
-                        className={statusColors[order.status] || 'bg-secondary'}
+                      <Badge
+                        variant="secondary"
+                        className={getOrderStatusBadgeClass(order.status)}
                       >
                         {order.status}
                       </Badge>

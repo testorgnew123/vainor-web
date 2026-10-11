@@ -97,7 +97,7 @@ const faqs = [
           'We use high-quality materials including 100% cotton, premium denim, linen, and sustainable fabrics. Specific material composition is listed on each product page. We prioritize comfort, durability, and sustainability in our material choices.',
       },
       {
-        question: 'How should I care for my Nuuvelle products?',
+        question: 'How should I care for my Vainor products?',
         answer:
           'Care instructions are provided on the product label and product page. Generally, we recommend machine washing cold with similar colors, avoiding bleach, and tumble drying on low. For best results, follow the specific care instructions for each item.',
       },
@@ -114,7 +114,7 @@ const faqs = [
       {
         question: 'How do I reset my password?',
         answer:
-          'The password reset feature is currently in progress and will be released soon. For instant support, please contact us at support@nuuvelle.com.',
+          'The password reset feature is currently in progress and will be released soon. For instant support, please contact us at support@vainor.com.',
       },
       {
         question: 'Can I save multiple shipping addresses?',
@@ -219,7 +219,7 @@ export default function FAQ() {
               Contact Us
             </a>
             <a
-              href="mailto:support@nuuvelle.com"
+              href="mailto:support@vainor.com"
               className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-6"
             >
               Email Support

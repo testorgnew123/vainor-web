@@ -2,115 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* NUUVELLE - Modern Men's Clothing Brand Design System */
+/* VAINOR - Modern Men's Clothing Brand Design System */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Brand Colors - Warm, Editorial Palette */
-    --background: 40 20% 98%;
-    --foreground: 30 10% 12%;
+    /* Brand Colors - Obsidian & Gold */
+    --background: 40 24% 97%;
+    --foreground: 222 15% 11%;
 
-    --card: 40 25% 97%;
-    --card-foreground: 30 10% 12%;
+    --card: 40 28% 98%;
+    --card-foreground: 222 15% 11%;
 
-    --popover: 40 20% 98%;
-    --popover-foreground: 30 10% 12%;
+    --popover: 40 24% 97%;
+    --popover-foreground: 222 15% 11%;
 
-    /* Primary - Deep Charcoal */
-    --primary: 30 10% 12%;
-    --primary-foreground: 40 20% 98%;
+    /* Primary - Obsidian */
+    --primary: 222 15% 11%;
+    --primary-foreground: 40 24% 97%;
 
-    /* Secondary - Warm Stone */
-    --secondary: 35 15% 92%;
-    --secondary-foreground: 30 10% 25%;
+    /* Secondary - Cool Stone */
+    --secondary: 220 10% 93%;
+    --secondary-foreground: 222 15% 25%;
 
-    /* Muted - Soft Taupe */
-    --muted: 35 12% 90%;
-    --muted-foreground: 30 8% 45%;
+    /* Muted - Cool Taupe */
+    --muted: 220 8% 91%;
+    --muted-foreground: 220 8% 45%;
 
-    /* Accent - Terracotta */
-    --accent: 15 55% 55%;
-    --accent-foreground: 40 20% 98%;
+    /* Accent - Gold/Brass */
+    --accent: 42 65% 52%;
+    --accent-foreground: 222 15% 11%;
 
-    /* Warm accent for hover states */
-    --accent-warm: 20 60% 50%;
-    --accent-warm-foreground: 40 20% 98%;
+    /* Deeper brass for hover states */
+    --accent-warm: 36 70% 44%;
+    --accent-warm-foreground: 222 15% 11%;
 
-    /* Success - Sage */
-    --success: 140 30% 45%;
-    --success-foreground: 40 20% 98%;
+    /* Success - Deep Sage */
+    --success: 150 38% 34%;
+    --success-foreground: 40 24% 97%;
 
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 40 20% 98%;
+    --destructive: 6 70% 45%;
+    --destructive-foreground: 40 24% 97%;
 
-    --border: 35 15% 88%;
-    --input: 35 15% 88%;
-    --ring: 15 55% 55%;
+    --border: 220 12% 88%;
+    --input: 220 12% 88%;
+    --ring: 42 65% 52%;
 
     --radius: 0.375rem;
 
     /* Sidebar */
-    --sidebar-background: 40 20% 97%;
-    --sidebar-foreground: 30 10% 25%;
-    --sidebar-primary: 30 10% 12%;
-    --sidebar-primary-foreground: 40 20% 98%;
-    --sidebar-accent: 35 15% 92%;
-    --sidebar-accent-foreground: 30 10% 25%;
-    --sidebar-border: 35 15% 88%;
-    --sidebar-ring: 15 55% 55%;
+    --sidebar-background: 40 24% 96%;
+    --sidebar-foreground: 222 15% 25%;
+    --sidebar-primary: 222 15% 11%;
+    --sidebar-primary-foreground: 40 24% 97%;
+    --sidebar-accent: 220 10% 93%;
+    --sidebar-accent-foreground: 222 15% 25%;
+    --sidebar-border: 220 12% 88%;
+    --sidebar-ring: 42 65% 52%;
 
     /* Custom Brand Tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(35 20% 95%) 0%, hsl(30 15% 90%) 100%);
-    --card-shadow: 0 2px 8px -2px hsl(30 10% 12% / 0.06), 0 4px 16px -4px hsl(30 10% 12% / 0.08);
-    --card-shadow-hover: 0 8px 24px -8px hsl(30 10% 12% / 0.12), 0 16px 40px -12px hsl(30 10% 12% / 0.15);
-    --overlay: hsl(30 10% 12% / 0.6);
+    --hero-gradient: linear-gradient(135deg, hsl(40 24% 96%) 0%, hsl(220 10% 91%) 100%);
+    --card-shadow: 0 2px 8px -2px hsl(222 15% 11% / 0.06), 0 4px 16px -4px hsl(222 15% 11% / 0.08);
+    --card-shadow-hover: 0 8px 24px -8px hsl(222 15% 11% / 0.12), 0 16px 40px -12px hsl(222 15% 11% / 0.15);
+    --overlay: hsl(222 15% 11% / 0.6);
   }
 
   .dark {
-    --background: 30 10% 8%;
-    --foreground: 40 15% 95%;
+    --background: 222 15% 9%;
+    --foreground: 40 20% 95%;
 
-    --card: 30 10% 10%;
-    --card-foreground: 40 15% 95%;
+    --card: 222 15% 11%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 30 10% 10%;
-    --popover-foreground: 40 15% 95%;
+    --popover: 222 15% 11%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 40 15% 95%;
-    --primary-foreground: 30 10% 8%;
+    --primary: 40 20% 95%;
+    --primary-foreground: 222 15% 9%;
 
-    --secondary: 30 8% 18%;
+    --secondary: 222 10% 18%;
     --secondary-foreground: 40 15% 90%;
 
-    --muted: 30 8% 20%;
-    --muted-foreground: 35 10% 60%;
+    --muted: 222 10% 20%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 15 55% 55%;
-    --accent-foreground: 40 20% 98%;
+    --accent: 42 65% 52%;
+    --accent-foreground: 222 15% 11%;
 
-    --accent-warm: 20 60% 55%;
-    --accent-warm-foreground: 40 20% 98%;
+    --accent-warm: 36 70% 48%;
+    --accent-warm-foreground: 222 15% 11%;
 
-    --success: 140 30% 50%;
-    --success-foreground: 40 20% 98%;
+    --success: 150 35% 50%;
+    --success-foreground: 40 20% 95%;
 
-    --destructive: 0 60% 55%;
-    --destructive-foreground: 40 20% 98%;
+    --destructive: 6 65% 55%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 30 8% 22%;
-    --input: 30 8% 22%;
-    --ring: 15 55% 55%;
+    --border: 222 10% 22%;
+    --input: 222 10% 22%;
+    --ring: 42 65% 52%;
 
-    --sidebar-background: 30 10% 10%;
+    --sidebar-background: 222 15% 11%;
     --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 40 15% 95%;
-    --sidebar-primary-foreground: 30 10% 8%;
-    --sidebar-accent: 30 8% 18%;
+    --sidebar-primary: 40 20% 95%;
+    --sidebar-primary-foreground: 222 15% 9%;
+    --sidebar-accent: 222 10% 18%;
     --sidebar-accent-foreground: 40 15% 90%;
-    --sidebar-border: 30 8% 22%;
-    --sidebar-ring: 15 55% 55%;
+    --sidebar-border: 222 10% 22%;
+    --sidebar-ring: 42 65% 52%;
   }
 }
 
@@ -125,12 +125,12 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
   }
 
   /* Elegant Display Typography */
   h1, h2, h3, .font-display {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Bodoni Moda', serif;
     @apply font-medium tracking-tight;
   }
 

@@ -61,14 +61,14 @@ export default function Sustainability() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl mb-6">Our Commitment</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              At Nuuvelle, sustainability isn't just a buzzword — it's woven into
+              At Vainor, sustainability isn't just a buzzword — it's woven into
               every decision we make. From the materials we source to the way we
               package and ship, we're constantly working to reduce our environmental
               impact.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
               We believe that the fashion industry can be a force for good. By choosing
-              Nuuvelle, you're supporting responsible practices that protect our planet
+              Vainor, you're supporting responsible practices that protect our planet
               for future generations.
             </p>
           </div>

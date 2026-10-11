@@ -33,7 +33,7 @@ export default function About() {
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&q=80"
-            alt="Nuuvelle Story"
+            alt="Vainor Story"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
@@ -62,7 +62,7 @@ export default function About() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl md:text-4xl mb-6">Who We Are</h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Nuuvelle was born from a simple belief: that men deserve clothing that
+              Vainor was born from a simple belief: that men deserve clothing that
               combines exceptional quality with conscious craftsmanship. We started with
               a small collection of essential pieces, each designed to be versatile,
               durable, and effortlessly stylish.

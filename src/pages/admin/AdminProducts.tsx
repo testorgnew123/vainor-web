@@ -221,9 +221,9 @@ export default function AdminProducts() {
                   <TableCell>
                     <div className="flex gap-1">
                       {product.is_active ? (
-                        <Badge variant="secondary" className="bg-green-100 text-green-800">Active</Badge>
+                        <Badge variant="secondary" className="bg-success/15 text-success">Active</Badge>
                       ) : (
-                        <Badge variant="secondary" className="bg-gray-100 text-gray-800">Hidden</Badge>
+                        <Badge variant="secondary" className="bg-secondary text-secondary-foreground">Hidden</Badge>
                       )}
                       {product.is_featured && (
                         <Badge variant="secondary">Featured</Badge>

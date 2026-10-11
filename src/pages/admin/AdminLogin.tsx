@@ -68,7 +68,7 @@ export default function AdminLogin() {
       <div className="w-full max-w-md">
         <div className="bg-background rounded-lg border border-border p-8 shadow-sm">
           <div className="text-center mb-8">
-            <h1 className="font-display text-3xl mb-2">Nuuvelle Admin</h1>
+            <h1 className="font-display text-3xl mb-2">Vainor Admin</h1>
             <p className="text-muted-foreground">Sign in to your admin account</p>
           </div>
 

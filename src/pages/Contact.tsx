@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'orders@nuuvelle.com',
-    href: 'mailto:orders@nuuvelle.com',
+    value: 'orders@vainor.com',
+    href: 'mailto:orders@vainor.com',
   },
   {
     icon: Phone,

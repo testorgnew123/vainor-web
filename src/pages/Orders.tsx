@@ -6,6 +6,7 @@ import { apiCall } from '@/lib/api';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { format } from 'date-fns';
+import { getOrderStatusBadgeClass } from '@/lib/orderStatus';
 
 interface Order {
   id: string;
@@ -15,16 +16,6 @@ interface Order {
   created_at: string;
   payment_status: string;
 }
-
-const statusColors: Record<string, string> = {
-  pending: 'bg-yellow-100 text-yellow-800',
-  confirmed: 'bg-blue-100 text-blue-800',
-  processing: 'bg-purple-100 text-purple-800',
-  shipped: 'bg-indigo-100 text-indigo-800',
-  delivered: 'bg-green-100 text-green-800',
-  cancelled: 'bg-red-100 text-red-800',
-  refunded: 'bg-gray-100 text-gray-800',
-};
 
 export default function Orders() {
   const navigate = useNavigate();
@@ -104,7 +95,7 @@ export default function Orders() {
                     <span className="font-mono font-medium">{order.order_number}</span>
                     <Badge
                       variant="secondary"
-                      className={statusColors[order.status] || 'bg-secondary'}
+                      className={getOrderStatusBadgeClass(order.status)}
                     >
                       {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                     </Badge>

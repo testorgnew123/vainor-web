@@ -173,7 +173,7 @@ export default function Shipping() {
                   of the damage. We'll arrange for a replacement or full refund at no cost to you.
                 </p>
                 <p className="text-muted-foreground">
-                  Email us at: <a href="mailto:support@nuuvelle.com" className="text-accent hover:underline">support@nuuvelle.com</a>
+                  Email us at: <a href="mailto:support@vainor.com" className="text-accent hover:underline">support@vainor.com</a>
                 </p>
               </div>
             </div>

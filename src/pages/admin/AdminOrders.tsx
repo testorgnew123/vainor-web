@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Eye, Search, Loader2, Clock, CheckCircle, XCircle, Truck, Package } from 'lucide-react';
+import { Eye, Search, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -29,6 +29,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { useAdminStore, adminApiCall } from '@/stores/adminStore';
 import { useToast } from '@/hooks/use-toast';
+import { ADMIN_ORDER_STATUS_OPTIONS, getOrderStatusConfig } from '@/lib/orderStatus';
 
 interface OrderItem {
   id: string;
@@ -50,15 +51,6 @@ interface Order {
   created_at: string;
   items?: OrderItem[];
 }
-
-const statusOptions = [
-  { value: 'pending', label: 'Pending', icon: Clock, color: 'text-yellow-600' },
-  { value: 'confirmed', label: 'Confirmed', icon: CheckCircle, color: 'text-blue-600' },
-  { value: 'processing', label: 'Processing', icon: Package, color: 'text-purple-600' },
-  { value: 'shipped', label: 'Shipped', icon: Truck, color: 'text-indigo-600' },
-  { value: 'delivered', label: 'Delivered', icon: CheckCircle, color: 'text-green-600' },
-  { value: 'cancelled', label: 'Cancelled', icon: XCircle, color: 'text-red-600' },
-];
 
 export default function AdminOrders() {
   const { token } = useAdminStore();
@@ -125,10 +117,10 @@ export default function AdminOrders() {
   };
 
   const getStatusBadge = (status: string) => {
-    const statusInfo = statusOptions.find(s => s.value === status) || statusOptions[0];
+    const statusInfo = getOrderStatusConfig(status) ?? ADMIN_ORDER_STATUS_OPTIONS[0];
     const Icon = statusInfo.icon;
     return (
-      <Badge variant="outline" className={`${statusInfo.color} border-current`}>
+      <Badge variant="outline" className={`${statusInfo.textClassName} border-current`}>
         <Icon className="h-3 w-3 mr-1" />
         {statusInfo.label}
       </Badge>
@@ -176,25 +168,25 @@ export default function AdminOrders() {
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-yellow-600">{orderStats.pending}</p>
+            <p className="text-3xl font-bold text-muted-foreground">{orderStats.pending}</p>
             <p className="text-sm text-muted-foreground">Pending</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-purple-600">{orderStats.processing}</p>
+            <p className="text-3xl font-bold text-[#8F5E14]">{orderStats.processing}</p>
             <p className="text-sm text-muted-foreground">Processing</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-indigo-600">{orderStats.shipped}</p>
+            <p className="text-3xl font-bold text-[#826217]">{orderStats.shipped}</p>
             <p className="text-sm text-muted-foreground">Shipped</p>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="pt-6 text-center">
-            <p className="text-3xl font-bold text-green-600">{orderStats.delivered}</p>
+            <p className="text-3xl font-bold text-success">{orderStats.delivered}</p>
             <p className="text-sm text-muted-foreground">Delivered</p>
           </CardContent>
         </Card>
@@ -219,7 +211,7 @@ export default function AdminOrders() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Statuses</SelectItem>
-                {statusOptions.map(status => (
+                {ADMIN_ORDER_STATUS_OPTIONS.map(status => (
                   <SelectItem key={status.value} value={status.value}>
                     {status.label}
                   </SelectItem>
@@ -368,10 +360,10 @@ export default function AdminOrders() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {statusOptions.map(status => (
+                    {ADMIN_ORDER_STATUS_OPTIONS.map(status => (
                       <SelectItem key={status.value} value={status.value}>
                         <div className="flex items-center gap-2">
-                          <status.icon className={`h-4 w-4 ${status.color}`} />
+                          <status.icon className={`h-4 w-4 ${status.textClassName}`} />
                           {status.label}
                         </div>
                       </SelectItem>

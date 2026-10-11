@@ -88,7 +88,7 @@ export default function Auth() {
 
         <div className="text-center mb-8">
           <Link to="/" className="font-display text-3xl font-medium tracking-tight">
-            NUUVELLE
+            VAINOR
           </Link>
           <p className="text-muted-foreground mt-2">
             {mode === 'signin'

@@ -86,9 +86,9 @@ export default function Blog() {
       <section className="bg-secondary py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-display mb-4">The Nuuvelle Journal</h1>
+            <h1 className="text-4xl md:text-5xl font-display mb-4">The Vainor Journal</h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Style guides, fashion tips, and behind-the-scenes stories from Nuuvelle.
+              Style guides, fashion tips, and behind-the-scenes stories from Vainor.
             </p>
             <div className="relative max-w-md mx-auto">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
