@@ -22,36 +22,36 @@ export default function Index() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1920&q=80"
-            alt="Vainor Fashion"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
+      <section className="relative h-[85vh] min-h-[600px] flex items-center overflow-hidden bg-primary">
+        {/* Decorative Mark */}
+        <div
+          className="absolute -right-24 -bottom-24 h-[120%] aspect-square text-accent/[0.07] pointer-events-none select-none"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 40 40" className="h-full w-full" fill="none">
+            <path d="M4 6 L11 6 L20 26 L29 6 L36 6 L20 36 Z" fill="currentColor" />
+          </svg>
         </div>
 
         {/* Hero Content */}
         <div className="container relative z-10">
           <div className="max-w-xl animate-fade-in-up">
-            <span className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider uppercase bg-background/20 backdrop-blur-sm text-white rounded-full">
+            <span className="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider uppercase border border-accent/50 text-accent rounded-full">
               New Collection 2024
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display text-primary-foreground mb-6 leading-tight">
               Timeless Style,
               <br />
-              <span className="italic">Modern Craft</span>
+              <span className="italic text-accent">Modern Craft</span>
             </h1>
-            <p className="text-lg text-white/80 mb-8 max-w-md">
+            <p className="text-lg text-primary-foreground/70 mb-8 max-w-md">
               Discover our curated collection of premium essentials, designed for
               those who appreciate quality and understated elegance.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button
                 size="lg"
-                className="bg-white text-foreground hover:bg-white/90"
+                className="bg-accent text-accent-foreground hover:bg-accent-warm"
                 asChild
               >
                 <Link to="/shop">
@@ -62,7 +62,7 @@ export default function Index() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white bg-transparent hover:bg-white/10"
+                className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
                 asChild
               >
                 <Link to="/about">Our Story</Link>
