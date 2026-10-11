@@ -62,7 +62,7 @@ export default function Index() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10"
+                className="border-primary-foreground/40 text-primary-foreground bg-transparent hover:bg-primary-foreground/10 hover:text-primary-foreground"
                 asChild
               >
                 <Link to="/about">Our Story</Link>
@@ -207,7 +207,7 @@ export default function Index() {
                   </p>
                   <Button
                     variant="outline"
-                    className="border-white text-white bg-transparent hover:bg-white/10"
+                    className="border-white text-white bg-transparent hover:bg-white/10 hover:text-white"
                     asChild
                   >
                     <Link to="/sustainability">Learn More</Link>
