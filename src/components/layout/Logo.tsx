@@ -12,16 +12,12 @@ interface LogoProps {
 export function Logo({ className, wordmarkClassName, variant = 'full' }: LogoProps) {
   return (
     <span className="inline-flex items-center gap-2">
-      <svg
-        viewBox="0 0 40 40"
-        className={cn('text-accent', className)}
-        fill="none"
+      <img
+        src="/logo-mark.jpg"
+        alt={variant === 'icon' ? 'Vainor' : ''}
         aria-hidden={variant === 'full' ? true : undefined}
-        role={variant === 'icon' ? 'img' : undefined}
-        aria-label={variant === 'icon' ? 'Vainor' : undefined}
-      >
-        <path d="M4 6 L11 6 L20 26 L29 6 L36 6 L20 36 Z" fill="currentColor" />
-      </svg>
+        className={cn('w-auto object-contain rounded-md', className)}
+      />
       {variant === 'full' && (
         <span
           className={cn(
